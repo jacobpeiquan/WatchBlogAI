@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Curated Timepieces</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .video-container, .content {
+            display: none; /* Initially hide all sections */
+        }
+
+        .active {
+            display: block; /* Only display the active section */
+        }
+
+        #background-video {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
+
+        .hero-content {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .hero-content h1 {
+            font-size: 96px;
+            color: #fff;
+            font-family: 'Tangerine', cursive;
+            margin-bottom: 20px;
+        }
+
+        button {
+            font-size: 48px;
+            padding: 20px 40px;
+            cursor: pointer;
+            background-color: #444;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-family: 'Tangerine', cursive;
+        }
+
+        button:hover {
+            background-color: #666;
+        }
+
+        .content {
+            padding: 20px;
+            background: linear-gradient(to bottom right, #0a2740, #d4af37); /* Regal gradient background */
+            color: #fff; /* Adjust text color for better visibility */
+            text-align: center; /* Align content to the center */
+        }
+
+        .watch-item {
+            margin: 20px auto; /* Center the box */
+            max-width: 800px; /* Limit maximum width of the box */
+            border: 2px solid #fff; /* Add border around the box */
+            padding: 20px; /* Add padding inside the box */
+            box-sizing: border-box; /* Include border and padding in the box size */
+            position: relative; /* Set position relative for absolute positioning of text */
+        }
+
+        .watch-item img {
+            max-width: 70%; /* Adjust image size */
+            height: auto;
+            margin-bottom: 20px; /* Add margin below image */
+        }
+
+        .watch-item p {
+            font-size: 24px; /* Set font size for the description */
+            font-family: 'Playfair Display', serif; /* Change font family */
+            line-height: 1.6; /* Adjust line height for better spacing */
+            margin: 0; /* Remove default margin */
+            text-align: left; /* Align text to the left */
+        }
+
+        .inquire-text, .price-tag {
+            position: absolute; /* Set position absolute for text */
+            background-color: #fff; /* Background color for text */
+            color: #000; /* Text color */
+            font-size: 18px; /* Font size for text */
+            padding: 10px; /* Padding for text */
+            border-radius: 5px; /* Border radius for text box */
+            top: 50%; /* Position relative to parent container */
+            transform: translate(-50%, -50%); /* Adjust position */
+            right: 10px; /* Position relative to parent container */
+        }
+
+        .price-tag {
+            top: 60%; /* Position relative to parent container */
+        }
+
+        .center {
+            text-align: center; /* Center text */
+            margin-bottom: 20px; /* Add margin to separate elements */
+        }
+    </style>
+</head>
+<body>
+
+<div class="video-container active" id="landingPage">
+    <video autoplay muted loop id="background-video">
+        <source src="watchblog.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    <div class="hero-content">
+        <h1>Where Generative AI Meets Horological Art</h1>
+        <button onclick="showContent()">Explore Our Picks</button>
+    </div>
+</div>
+
+<div class="content" id="contentPage">
+    <h1 class="center">Our Top Watch Picks</h1>
+    <div class="watch-item">
+        <img src="file:///C:/Users/jacob/Desktop/watchblog/watchblogap.webp" alt="Watch 1">
+        <p>This watch draws inspiration from the sturdy and iconic design of the Audemars Piguet Royal Oak, renowned for its resilience and elegance. It elevates its sophistication with a classy leather bracelet, seamlessly blending durability with luxury. The skeletonized features are thoughtfully incorporated to showcase the intricate craftsmanship within, allowing a glimpse into the watch's mechanical heart and celebrating the artistry behind its creation.</p>
+        <div class="inquire-text">Inquire today</div>
+        <div class="price-tag">$100,000</div>
+    </div>
+    <div class="watch-item">
+        <img src="file:///C:/Users/jacob/Desktop/watchblog/watchbloggs.webp" alt="Watch 2">
+        <p>This watch encapsulates the Grand Seiko ethos of harmonizing with nature, employing a palette that mirrors the mesmerizing hues of a galaxy. Its design seamlessly blends these cosmic colors, offering a celestial tribute on the wrist.</p>
+        <div class="inquire-text">Inquire today</div>
+        <div class="price-tag">$150,000</div>
+    </div>
+    <div class="watch-item">
+        <img src="file:///C:/Users/jacob/Desktop/watchblog/watchblogrlx2.webp" alt="Watch 3">
+        <p>This watch is inspired by the Rolex GMT Master II, embodying school spirit through its use of the University of Washington's gold and purple colors. The design seamlessly blends the watch's iconic functionality with the vibrant hues of academic pride, offering a sophisticated tribute to the institution's legacy and spirit.</p>
+        <div class="inquire-text">Inquire today</div>
+        <div class="price-tag">$200,000</div>
+    </div>
+    <button onclick="showLanding()">Back to Home</button>
+</div>
+
+<script>
+    function showContent() {
+        document.getElementById('landingPage').classList.remove('active');
+        document.getElementById('contentPage').classList.add('active');
+    }
+
+    function showLanding() {
+        document.getElementById('contentPage').classList.remove('active');
+        document.getElementById('landingPage').classList.add('active');
+    }
+</script>
+
+</body>
+</html>
